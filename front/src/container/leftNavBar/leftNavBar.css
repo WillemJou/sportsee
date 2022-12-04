@@ -7,9 +7,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    gap: 4%;
-    height: 100%;
+    margin-top: 130px;
+    gap: 7%;
+    height: 75.2vh;
 }
 
 .nav-logo {
@@ -21,7 +21,7 @@
     border-radius: 6px;
     padding: 9%;
     background-color: white;
-    width: 30%;
+    width: 50%;
     height: auto;
 }
 
