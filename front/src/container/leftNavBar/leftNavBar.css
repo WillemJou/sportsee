@@ -1,0 +1,31 @@
+.left-bar {
+    position: relative;
+    background-color: black;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    gap: 4%;
+    height: 100%;
+}
+
+.nav-logo {
+    width: 100%;
+}
+
+.logo-container {
+    border-radius: 6px;
+    padding: 9%;
+    background-color: white;
+    width: 30%;
+    height: auto;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
+}

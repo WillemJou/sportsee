@@ -1,0 +1,6 @@
+
+.wrapper {
+    display: grid;
+    grid-template-columns:  10% 90%;
+    height: 86.5vh;
+}

@@ -1,0 +1,19 @@
+
+.nav-link {
+    color: white;
+    padding: 0 5%;
+    background-color: black;
+}
+
+.logo {
+    background-color: black;
+    width: 21%;
+}
+
+.top-nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
