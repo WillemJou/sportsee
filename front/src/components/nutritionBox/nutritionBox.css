@@ -1,0 +1,23 @@
+.nutrition-box {
+    display: flex;
+    align-items: center;
+    padding: 10%;
+}
+
+.nutrition-logo {
+    width: 15px;
+    height: auto;
+}
+
+.nutrition-logo-container  {
+    width: 15px;
+    mix-blend-mode: normal;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+.charts-police {
+    color: #74798C;
+    font-size: 0.7rem;
+    font-weight: 500;
+}

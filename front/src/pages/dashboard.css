@@ -46,6 +46,9 @@ grid-area: activity;
 .score-container {
     grid-area: score;
 }
-.nutrition-container {
+.all-nutritions-container {
     grid-area: nutrition;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

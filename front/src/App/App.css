@@ -2,5 +2,5 @@
 .wrapper {
     display: grid;
     grid-template-columns:  7% 93%;
-    height: 86.5vh;
+    height: 90.5vh;
 }

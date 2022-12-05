@@ -1,5 +1,4 @@
 .left-bar {
-    position: relative;
     background-color: black;
 }
 
@@ -7,9 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 130px;
-    gap: 7%;
-    height: 75.2vh;
+    justify-content: space-evenly;
+    height: 90.5vh;
 }
 
 .nav-logo {
@@ -18,6 +16,7 @@
 
 
 .logo-container {
+    cursor: pointer;
     border-radius: 6px;
     padding: 9%;
     background-color: white;
@@ -26,7 +25,5 @@
 }
 
 .copyright {
-    position: absolute;
-    bottom: 5%;
-    left: 45%;
+   width: 15%;
 }

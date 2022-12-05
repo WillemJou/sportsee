@@ -22,9 +22,13 @@ export function LeftNavBar () {
             <div className="logo-container">
             <img className="nav-logo" src={dumbbell} alt="" />
             </div>
-            </div>
             <img className="copyright" src={copyright} alt="copyright" />
             </div>
+            </div>
+
+
+
+            
             </>
     )
 }
