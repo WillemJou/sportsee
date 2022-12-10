@@ -9,6 +9,22 @@
     height: auto;
 }
 
+.calories-box {
+    background-color: hsla(0, 100%, 50%, 0.299);
+}
+
+.proteins-box {
+    background-color: #4AB8FF1A;
+}
+
+.lipides-box {
+    background-color: #FD51811A;
+}
+
+.glucides-box {
+    background-color: #f9ce2358 ;
+}
+
 .nutrition-logo-container  {
     width: 15px;
     mix-blend-mode: normal;
