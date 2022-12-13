@@ -1,7 +1,9 @@
 .nutrition-box {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 10%;
+    gap: 10%;
 }
 
 .nutrition-logo {
