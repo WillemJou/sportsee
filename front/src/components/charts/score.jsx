@@ -3,7 +3,6 @@ import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts'
 export function Score(props) {
   const score  = props.score
   const rest = props.rest
-console.log(rest);
   const datas = [
     { name: 'score', value: score},
     { name: 'rest', value: rest },

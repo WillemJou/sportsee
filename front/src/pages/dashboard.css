@@ -2,6 +2,11 @@
     padding: 4%;
 }
 
+.loading-title {
+    margin: auto;
+    text-align: center;
+    color: red;
+}
 .dash-header {
     display: flex;
     flex-direction: column;
