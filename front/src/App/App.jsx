@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchAverageSessionDatas, fetchMainUserDatas } from '../API/APIService'
+import { fetchActivityDatas, fetchAverageSessionDatas, fetchMainUserDatas, fetchPerfDatas } from '../API/APIService'
 import { LeftNavBar } from '../container/leftNavBar/leftNavBar'
 import { TopNavBar } from '../container/topNavBar/topNavBar'
 import { Dashboard } from '../pages/dashboard'
@@ -11,7 +11,8 @@ export function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [datas, setData] = useState([])
   const [average, setAverage] = useState([])
- 
+  const [activity, setActivity] = useState([])
+  const [performance, setPerformance] = useState([])
   useEffect(() => {
       const loader = () => {
           let timer = setTimeout(() => setIsLoading(true), 500)
@@ -22,10 +23,13 @@ export function App() {
     const getDatas = async () => {
       await fetchMainUserDatas(id).then((res) => setData(res))
       await fetchAverageSessionDatas(id).then((res) => setAverage(res))
+      await fetchActivityDatas(id).then((res) => setActivity(res))
+      await fetchPerfDatas(id).then((res) => setPerformance(res))
     }
     loader()
     getDatas(id)
   }, [])
+ 
   return (
     <>
       <TopNavBar />
@@ -35,6 +39,8 @@ export function App() {
           isLoading={isLoading}
           name={datas.firstName}
           average={average}
+          activity={activity}
+          performance={performance}
           nutriments={datas.nutriments}
           score={datas.percent}
           rest={datas.rest}

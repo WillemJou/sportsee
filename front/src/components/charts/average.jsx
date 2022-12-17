@@ -1,6 +1,6 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, CartesianGrid, YAxis } from 'recharts'
       
-export function Average(props) {
+export function AverageChart(props) {
 
 const renderTooltip = (value, label) => {
   label = 'min'
@@ -8,10 +8,10 @@ const renderTooltip = (value, label) => {
 }
 
     return (
-      <ResponsiveContainer width="99%" height={250}>           
+      <ResponsiveContainer width="100%" height="100%">           
         <LineChart
           width="100%"
-          height={250}
+          height="100%"
           data={props.average}
           style={{ background: 'red', borderRadius: '5px' }}
           margin={{ top: 0, right: 12, left: 12, bottom: 0 }}

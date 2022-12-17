@@ -1,6 +1,6 @@
 import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts'
 
-export function Score(props) {
+export function ScoreChart(props) {
   const score  = props.score
   const rest = props.rest
   const datas = [
