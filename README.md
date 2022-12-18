@@ -18,7 +18,7 @@ WillemJ, OpenClassRoom student
  install NodeJS to use package manager (using npm but you can use yarn ;)
 
 ### 1. Clone the project 
-` https://github.com/lalala.git `
+` https://github.com/WillemJou/sportsee.git `
 
 ### 2. Install Backend dependencies
  
