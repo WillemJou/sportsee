@@ -1,14 +1,22 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, CartesianGrid, YAxis } from 'recharts'
-      
-export function AverageChart(props) {
-
-const renderTooltip = (value, label) => {
+ 
+/** 
+ * @param {Integer} value 
+ * @param {String} label 
+ */ 
+const customizeTooltip = (value, label) => {
   label = 'min'
   return [label, value]
 }
 
+/**
+ * @param {Array} props 
+ * @param {String} day
+ * @param {Integer} duration  
+ */
+export function AverageChart(props) {
     return (
-      <ResponsiveContainer width="100%" height="100%">           
+      <ResponsiveContainer position="relative" width="99%" height="100%">           
         <LineChart
           width="100%"
           height="100%"
@@ -40,6 +48,7 @@ const renderTooltip = (value, label) => {
         </text> 
         <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
           <XAxis 
+          dy={10}
           tickLine={false}
           axisLine={false}
           stroke={'#FFF'}
@@ -49,10 +58,10 @@ const renderTooltip = (value, label) => {
                   fontWeight: 500,}}
           />
           <YAxis
-          domain={[22, 122]}
+           domain={[22, 122]}
            hide={true} />
           <Tooltip
-          cursor= {false}
+      
           separator=" "
           itemStyle={{
             margin: 0,
@@ -67,7 +76,11 @@ const renderTooltip = (value, label) => {
           labelStyle={{
             display: 'none',
           }}
-          formatter={renderTooltip}
+          formatter={customizeTooltip}
+          cursor={{
+            stroke: 'rgba(0, 0, 0, 0.1)',
+            strokeWidth: 50,
+        }}
         />
           <Line
             type="natural"
