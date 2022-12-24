@@ -1,0 +1,13 @@
+.dash-header {
+    display: flex;
+    flex-direction: column;
+}
+#hello {
+    font-weight: 300;
+    color: black;
+}
+
+.name {
+    font-weight: 300;
+    color: red;
+}

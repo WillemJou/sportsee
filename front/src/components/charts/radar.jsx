@@ -1,9 +1,13 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts'
   
+/**
+ * @param {Array} props 
+ * @param {Integer} props.value
+ * @param {String} props.kind
+ */
   export function PerfChart(props) {
-console.log(props);
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="99%" height="100%">
         <RadarChart
           cx="50%"
           cy="50%"

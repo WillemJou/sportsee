@@ -1,6 +1,14 @@
 import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts'
 
+
+/**
+ * @param {Object} props 
+ * @param {Integer} props.rest
+ * @param {Integer} props.score
+ * @returns 
+ */
 export function ScoreChart(props) {
+
   const score  = props.score
   const rest = props.rest
   const datas = [
@@ -9,7 +17,7 @@ export function ScoreChart(props) {
   ]
       
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="99%" height="100%">
       <PieChart
         style={{
           background: '#FBFBFB',
@@ -51,8 +59,9 @@ export function ScoreChart(props) {
           startAngle={90}
           endAngle={-190 + (datas[0].value / 100) * 360}
           cornerRadius={5}
-        >
+        > 
           {datas.map((entry, index) => {
+            // generate 2 circles cells, red for the score and grey for the rest 
             if (index === 1) {
               return <Cell key={`cell-${index}`} stroke="none" fill="#FBFBFB" />  
             }
@@ -60,16 +69,20 @@ export function ScoreChart(props) {
           })}
         </Pie>
         <text
-          x="42%"
-          y="100"
+          x="52%"
+          y="40%"
+          textAnchor="middle" 
+          dominantBaseline="middle"
           fontWeight={700}
           fontSize={'26px'}
         >
           {datas[0].value}%
         </text>
         <text
-         x="40%"
-         y="55%"
+         x="50%"
+         y="53%"
+         textAnchor="middle" 
+          dominantBaseline="middle"
           fontWeight={500}
           fontSize={'16px'}
           opacity="0.6"
@@ -77,8 +90,10 @@ export function ScoreChart(props) {
           de votre
         </text>
         <text
-          x="40%"
+          x="50%"
           y="63%"
+          textAnchor="middle" 
+          dominantBaseline="middle"
           fontWeight={500}
           fontSize={'16px'}
           opacity="0.6"

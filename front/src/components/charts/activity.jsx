@@ -1,18 +1,31 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
+/** 
+* @param {integer} value 
+ * @param {string} label 
+ */
 const renderTooltip = (value, label) => {
   label = value > 150 ? 'kCal' : 'kg'
   return [label, value]
 }
 
+/**
+ * @param {string} value 
+ */
 const renderColorfulLegendText = (value) => {
   return <span style={{ color: '#74798C', paddingLeft: '10px' }}>{value}</span>
 }
 
+/**
+ * @param {Array} props 
+ * @param {String} props.day
+ * @param {Integer} props.kg 
+ * @param {integer} props.kCal 
+ * @returns 
+ */
 export function ActivityChart(props) {
-   
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="99%" height="100%">
       <BarChart
         data={props.activity}
         margin={{
