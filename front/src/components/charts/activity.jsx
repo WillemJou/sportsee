@@ -1,8 +1,18 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts'
+import PropTypes from 'prop-types'
 
-/** 
-* @param {integer} value 
- * @param {string} label 
+/**
+ * @param {integer} value
+ * @param {string} label
  */
 const renderTooltip = (value, label) => {
   label = value > 150 ? 'kCal' : 'kg'
@@ -10,18 +20,18 @@ const renderTooltip = (value, label) => {
 }
 
 /**
- * @param {string} value 
+ * @param {string} value
  */
 const renderColorfulLegendText = (value) => {
   return <span style={{ color: '#74798C', paddingLeft: '10px' }}>{value}</span>
 }
 
 /**
- * @param {Array} props 
+ * @param {Array} props
  * @param {String} props.day
- * @param {Integer} props.kg 
- * @param {integer} props.kCal 
- * @returns 
+ * @param {Integer} props.kg
+ * @param {integer} props.kCal
+ * @returns
  */
 export function ActivityChart(props) {
   return (
@@ -56,12 +66,7 @@ export function ActivityChart(props) {
           fontSize="14px"
           tickMargin={20}
         />
-        <YAxis
-          dataKey="kCal"
-          domain={[0, 100]}
-          hide={true}
-          yAxisId="kCal"
-        />
+        <YAxis dataKey="kCal" domain={[0, 100]} hide={true} yAxisId="kCal" />
         <Tooltip
           offset={50}
           separator=" "
@@ -96,7 +101,7 @@ export function ActivityChart(props) {
           wrapperStyle={{
             top: '30px',
             right: '24px',
-        
+
             fontWeight: '500',
             fontSize: '14px',
           }}
@@ -123,4 +128,8 @@ export function ActivityChart(props) {
       </BarChart>
     </ResponsiveContainer>
   )
+}
+
+ActivityChart.propTypes = {
+  activity: PropTypes.array,
 }
