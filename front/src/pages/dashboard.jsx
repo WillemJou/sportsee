@@ -9,6 +9,7 @@ import { ScoreChart } from '../components/charts/score'
 import { AverageChart } from '../components/charts/average'
 import { ActivityChart } from '../components/charts/activity'
 import { PerfChart } from '../components/charts/radar'
+import PropTypes from 'prop-types'
 
 /**
  * @param {Object} props - all formatted data
@@ -71,4 +72,16 @@ export function Dashboard(props) {
       </div>
     </section>
   )
+}
+Dashboard.propTypes = {
+  name: PropTypes.string,
+  average: PropTypes.array,
+  activity: PropTypes.array,
+  performance: PropTypes.array,
+  score: PropTypes.number,
+  rest: PropTypes.number,
+  calorieCount: PropTypes.number,
+  proteinCount: PropTypes.number,
+  carbohydrateCount: PropTypes.number,
+  lipidCount: PropTypes.number,
 }
