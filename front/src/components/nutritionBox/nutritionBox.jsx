@@ -2,14 +2,13 @@ import './nutritionBox.css'
 import PropTypes from 'prop-types'
 
 /**
- * @param {SVG} logo
+ * @param {String} logo
  * @param {String} type
  * @param {Number} nutriments
  * @param {String} unit
  * @param {CssClass} className
  */
 export function NutritionBox({ logo, type, nutriments, unit, className }) {
-  console.log(typeof type)
   return (
     <div className="nutrition-box data-container">
       <div className={`${className} nutrition-logo-container`}>
@@ -23,7 +22,7 @@ export function NutritionBox({ logo, type, nutriments, unit, className }) {
   )
 }
 NutritionBox.propTypes = {
-  logo: PropTypes.oneOf(['svg', 'img']),
+  logo: PropTypes.string,
   className: PropTypes.string,
   nutriments: PropTypes.number,
   type: PropTypes.string,
