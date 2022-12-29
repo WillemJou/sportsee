@@ -10,7 +10,7 @@ import { LeftNavBar } from '../container/leftNavBar/leftNavBar'
 import { TopNavBar } from '../container/topNavBar/topNavBar'
 import { Dashboard } from '../pages/dashboard'
 import { Loader } from '../components/loader/loader'
-import './app.css'
+import './App.css'
 import PropTypes from 'prop-types'
 import { Error } from '../components/error/error'
 
