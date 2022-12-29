@@ -2,24 +2,27 @@ import userMainDatas from '../mockData/userMainData.json'
 import averageDatas from '../mockData/userAverageSessions.json'
 import activityDatas from '../mockData/userActivity.json'
 import performanceDatas from '../mockData/userPerformance.json'
-import { WorkingAverageSessionData, WorkingUserData, WorkingActivityData, WorkingPerfData } from './models'
+import {
+  WorkingAverageSessionData,
+  WorkingUserData,
+  WorkingActivityData,
+  WorkingPerfData,
+} from './models'
 /**
- * @param {Integer} id 
- * @returns {Object} userInformation - api user formatted data with working class 
+ * @param {Integer} id
+ * @returns {Object} userInformation - api user formatted data with working class
  */
 export async function fetchMainUserDatas(id) {
-  try {
-    const res = await fetch('http://localhost:3000/user/' + id)
-    const datas = await res.json()
-    const userFetchInformation = new WorkingUserData(datas.data)
-    return userFetchInformation
-  } catch {
-    return getMainUserMockDatas(id)
-  }
+  const res = await fetch('http://localhost:3000/user/' + id)
+  const datas = await res.json()
+  const userFetchInformation = new WorkingUserData(datas.data)
+  return userFetchInformation
+  //if you want to work with mocked datas : return line 21 :
+  // return getMainUserMockDatas(id)
 }
 /**
  * @param {Integer} id
- * @returns {Object} userMockInformation - local user formatted data with working class 
+ * @returns {Object} userMockInformation - local user formatted data with working class
  */
 export function getMainUserMockDatas(id) {
   const mockDatas = userMainDatas
@@ -30,88 +33,72 @@ export function getMainUserMockDatas(id) {
 }
 
 /**
- * @param {Integer} id 
+ * @param {Integer} id
  * @returns {Array} averageSessionInformation - api or mock average formatted data with working class
  */
-export async function fetchAverageSessionDatas (id) {
-    try{
-    const res = await fetch('http://localhost:3000/user/' + id + '/average-sessions')
-    const datas = await res.json()
-    const averageSessionInformation = new WorkingAverageSessionData(datas.data)
-    return averageSessionInformation
-    } catch {
-        return getAverageMockDatas(id)
-    }
+export async function fetchAverageSessionDatas(id) {
+  const res = await fetch(
+    'http://localhost:3000/user/' + id + '/average-sessions'
+  )
+  const datas = await res.json()
+  const averageSessionInformation = new WorkingAverageSessionData(datas.data)
+  return averageSessionInformation
+  //if you want to work with mocked datas : return line 47 :
+  // return getAverageMockDatas(id)
 }
 /**
  * @param {Integer} id
- * @returns {Object} averageMockInformation - local average datas formatted with working class 
+ * @returns {Object} averageMockInformation - local average datas formatted with working class
  */
- export function getAverageMockDatas(id) {
-    const mockDatas = averageDatas
-    const matchId = mockDatas.find((arr) => (arr.userId = id))
-    const averageMockInformation = new WorkingAverageSessionData(matchId)
-    return averageMockInformation
-  }
+export function getAverageMockDatas(id) {
+  const mockDatas = averageDatas
+  const matchId = mockDatas.find((arr) => (arr.userId = id))
+  const averageMockInformation = new WorkingAverageSessionData(matchId)
+  return averageMockInformation
+}
 
 /**
- * @param {Integer} id 
+ * @param {Integer} id
  * @returns {Array} activitySessionInformation - api or mock activity formatted data with working class
  */
-export async function fetchActivityDatas (id) {
-    try{
-    const res = await fetch('http://localhost:3000/user/' + id + '/activity')
-    const datas = await res.json()
-    const activitySessionInformation = new WorkingActivityData(datas.data)
-    return activitySessionInformation
-    } catch {
-        return getActivityMockDatas(id)
-    }
+export async function fetchActivityDatas(id) {
+  const res = await fetch('http://localhost:3000/user/' + id + '/activity')
+  const datas = await res.json()
+  const activitySessionInformation = new WorkingActivityData(datas.data)
+  return activitySessionInformation
+  //if you want to work with mocked datas : return line 71 :
+  // return getActivityMockDatas(id)
 }
 /**
  * @param {Integer} id
- * @returns {Object} activityMockInformation - local activity datas formatted with working class 
+ * @returns {Object} activityMockInformation - local activity datas formatted with working class
  */
- export function getActivityMockDatas(id) {
-    const mockDatas = activityDatas
-    const matchId = mockDatas.find((arr) => (arr.userId = id))
-    const activityMockInformation = new WorkingActivityData(matchId)
-    return activityMockInformation
-  }
+export function getActivityMockDatas(id) {
+  const mockDatas = activityDatas
+  const matchId = mockDatas.find((arr) => (arr.userId = id))
+  const activityMockInformation = new WorkingActivityData(matchId)
+  return activityMockInformation
+}
 
 /**
- * @param {Integer} id 
+ * @param {Integer} id
  * @returns {Array} perfSessionInformation - api or mock performance formatted data with working class
  */
-export async function fetchPerfDatas (id) {
-    try {
-    const res = await fetch('http://localhost:3000/user/' + id + '/performance')
-    const datas = await res.json()
-    const perfSessionInformation = new WorkingPerfData(datas.data)
-    return perfSessionInformation
-    } catch {
-        return getPerformanceMockDatas(id)
-    }
+export async function fetchPerfDatas(id) {
+  const res = await fetch('http://localhost:3000/user/' + id + '/performance')
+  const datas = await res.json()
+  const perfSessionInformation = new WorkingPerfData(datas.data)
+  return perfSessionInformation
+  //if you want to work with mocked datas : return line 94 :
+  //return getPerformanceMockDatas(id)
 }
 /**
  * @param {Integer} id
- * @returns {Object} performanceMockInformation - local performance datas formatted with working class 
+ * @returns {Object} performanceMockInformation - local performance datas formatted with working class
  */
- export function getPerformanceMockDatas(id) {
-    const mockDatas = performanceDatas
-    const matchId = mockDatas.find((arr) => (arr.userId = id))
-    const performanceMockInformation = new WorkingPerfData(matchId)
-    return performanceMockInformation
-  }
-
-
-
-
-
-
-
-
-    
-
-
-
+export function getPerformanceMockDatas(id) {
+  const mockDatas = performanceDatas
+  const matchId = mockDatas.find((arr) => (arr.userId = id))
+  const performanceMockInformation = new WorkingPerfData(matchId)
+  return performanceMockInformation
+}

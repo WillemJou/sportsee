@@ -1,0 +1,16 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center {
+    margin-top: 40vh;
+    font-size: 20px;
+    color: red;
+    text-align: center;
+}
+.title {
+    text-align: center;
+    font-weight: bolder;
+}
